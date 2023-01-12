@@ -2,12 +2,40 @@
 //  и выдаёт таблицу кубов чисел от 1 до N.
 // 3 -> 1, 8, 27
 
-void doube(int size)
+// 1. Считать от пользователя N
+
+int GetNumberByUser(string text)
 {
-    for(int i = 1; i <= size; i++)
+    Console.Write(text + ":");
+    return Convert.ToInt32(Console.ReadLine());
+}
+// 2. Создание массива
+
+int[] CreateArray(int size)
 {
-    Console.WriteLine(Math.Pow(i, 3));
+    return new int[size];
 }
+
+// 3. Метод получения кубов чисел
+
+void GetCubes(int[] colNumbers)
+{
+    int count = colNumbers.Length;
+    for(int i = 0; i < count; i++)
+    {
+        colNumbers[i] = i * i * i;
+    }
 }
-int n = System.Convert.ToInt32(Console.ReadLine());
-doube(n);
+// 4. Печать результата
+
+string Print(int[] numbers)
+{
+string output = String.Empty;
+int size = numbers.Length;
+
+for(int i = 0; i < size; i++)
+{
+output = output + $"{i}^3 = {numbers[i]}\n";
+}
+return output;
+}
