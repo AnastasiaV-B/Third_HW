@@ -4,18 +4,19 @@
 // 14212 -> нет
 // 12821 -> да
 
-Console.WriteLine("Введите Ваше число: ");
-            string str = Console.ReadLine();
-            int prov = 0;
-            for (int i = 0; i < str.Length / 2; i++)
-            {
-                if (str.Substring(i, 1) != (str.Substring(str.Length - 1 - i, 1)))
-                {
-                    Console.WriteLine("Число {0} не палиндром", str);
-                    break;
-                }
-                else
-                    prov = 1;
-            }
-            if (prov == 1) Console.WriteLine("Число {0} палиндром", str);
-        
+Console.Write("Введите число: ");
+string number = Console.ReadLine();
+
+void CheckingNumber(string number)
+{
+  if (number[0]==number[4] || number[1]==number[3])
+  {
+    Console.WriteLine($"Да {number} - палиндром.");
+  }
+  else 
+     Console.WriteLine($"Нет {number} - не палиндром.");
+}
+ if (number!.Length == 5)
+{
+  CheckingNumber(number);
+}
