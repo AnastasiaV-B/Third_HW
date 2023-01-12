@@ -4,38 +4,37 @@
 
 // 1. Считать от пользователя N
 
-int GetNumberByUser(string text)
-{
-    Console.Write(text + ":");
-    return Convert.ToInt32(Console.ReadLine());
-}
+Console.Write("Введите число: ");
+int cube = Convert.ToInt32(Console.ReadLine());
+
 // 2. Создание массива
 
-int[] CreateArray(int size)
+void Cube(int[] cube)
 {
-    return new int[size];
+  int counter = 1;
+  int length = cube.Length;
+  while (counter <  length)
+  {
+    cube[counter] = Convert.ToInt32(Math.Pow(counter, 3));
+    counter++;
+  }
 }
 
 // 3. Метод получения кубов чисел
 
-void GetCubes(int[] colNumbers)
+void PrintArray(int[] coll)
 {
-    int count = colNumbers.Length;
-    for(int i = 0; i < count; i++)
-    {
-        colNumbers[i] = i * i * i;
-    }
-}
+  int count = coll.Length;
+  int index = 1;
+  while(index < count)
+  {
+    Console.Write(coll[index]+ " ");
+    index++;
+  }
+} 
+
 // 4. Печать результата
 
-string Print(int[] numbers)
-{
-string output = String.Empty;
-int size = numbers.Length;
-
-for(int i = 0; i < size; i++)
-{
-output = output + $"{i}^3 = {numbers[i]}\n";
-}
-return output;
-}
+int[] array = new int[cube+1];
+Cube(array);
+PrintArray(array);
