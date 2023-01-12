@@ -2,12 +2,9 @@
 //  и выдаёт таблицу кубов чисел от 1 до N.
 // 3 -> 1, 8, 27
 
-// 1. Считать от пользователя N
 
 Console.Write("Введите число: ");
 int cube = Convert.ToInt32(Console.ReadLine());
-
-// 2. Создание массива
 
 void Cube(int[] cube)
 {
@@ -20,8 +17,6 @@ void Cube(int[] cube)
   }
 }
 
-// 3. Метод получения кубов чисел
-
 void PrintArray(int[] coll)
 {
   int count = coll.Length;
@@ -32,8 +27,6 @@ void PrintArray(int[] coll)
     index++;
   }
 } 
-
-// 4. Печать результата
 
 int[] array = new int[cube+1];
 Cube(array);
